@@ -1,0 +1,14 @@
+.roomMyMessageBox {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.roomMyMessage {
+  padding: 10px;
+  background-color: salmon;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}

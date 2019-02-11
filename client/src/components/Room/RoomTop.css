@@ -1,0 +1,16 @@
+.roomTopBox {
+  background-color: #414141;
+  position: fixed;
+  width: inherit;
+  max-width: inherit;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roomTop {
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+}

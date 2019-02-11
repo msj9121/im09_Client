@@ -1,0 +1,36 @@
+.navRoomContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navRoomBox {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.navRoomXbox {
+  color: white;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.box {
+  display: flex;
+}
+
+.box-open {
+  color: white;
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.navRoom {
+  text-decoration: none;
+}
+
+.navRoomName {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
