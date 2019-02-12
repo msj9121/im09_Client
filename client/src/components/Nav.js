@@ -12,7 +12,7 @@ class Nav extends Component {
   }
 
   async componentDidMount() {
-    const res = await fetch("http://localhost:5000/rooms");
+    const res = await fetch("http://54.180.26.159:5000/rooms");
     const rooms = await res.json();
     this.setState({
       rooms: this.state.rooms.concat(rooms)
@@ -20,7 +20,7 @@ class Nav extends Component {
   }
 
   _changeRooms = async () => {
-    const res = await fetch("http://localhost:5000/rooms");
+    const res = await fetch("http://54.180.26.159:5000/rooms");
     const rooms = await res.json();
     this.setState({
       rooms: rooms
