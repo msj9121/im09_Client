@@ -20,7 +20,7 @@ class NavRoom extends Component {
       roomName: this.props.room.roomName,
       roomCtor: this.props.room.roomCtor
     };
-    const res = await fetch(`http://54.180.26.159:5000/rooms/room`, {
+    const res = await fetch(`http://localhost:5000/rooms/room`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

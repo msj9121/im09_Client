@@ -11,11 +11,12 @@ class App extends Component {
     this.state = {
       splash: true,
       session: null,
+      rooms: [],
       comments: []
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     setTimeout(() => {
       this.setState({
         splash: false
@@ -28,14 +29,43 @@ class App extends Component {
       });
     }
 
-    const webSocket = new WebSocket("ws://54.180.26.159:5000/");
+    const res = await fetch("http://localhost:5000/rooms");
+    const rooms = await res.json();
+    this.setState({
+      rooms: this.state.rooms.concat(rooms)
+    });
+
+    //------------웹소켓 연결---------------//
+    const webSocket = new WebSocket("ws://localhost:5000/");
     webSocket.onopen = () => {
       console.log("서버와 웹소켓 연결 성공!");
+    };
+    webSocket.onmessage = event => {
+      console.log("1", JSON.parse(event.data));
+      const res = JSON.parse(event.data);
+      const rooms = res.rooms;
+      console.log("rooms", rooms);
+      this.setState({
+        rooms: rooms
+      });
     };
     this.setState({
       webSocket: webSocket
     });
   }
+
+  _changeRooms = async () => {
+    const res = await fetch("http://localhost:5000/rooms");
+    const rooms = await res.json();
+    this.setState({
+      rooms: rooms
+    });
+
+    const scrollBottom =
+      document.getElementById("navRooms_inner").scrollHeight -
+      document.getElementById("navRooms_inner").clientHeight;
+    document.getElementById("navRooms_inner").scrollTop = scrollBottom;
+  };
 
   _login = result => {
     sessionStorage.setItem("userId", result);
@@ -52,9 +82,9 @@ class App extends Component {
   };
 
   _changeComments = async roomName => {
-    const res = await fetch(`http://54.180.26.159:5000/comments?room=${roomName}`);
+    const res = await fetch(`http://localhost:5000/comments?room=${roomName}`);
     const comments = await res.json();
-    console.log(comments);
+
     this.setState({
       comments: comments
     });
@@ -63,10 +93,10 @@ class App extends Component {
 
     this.state.webSocket.onmessage = event => {
       this.state.webSocket.send(roomName);
-      console.log(roomName);
-      console.log(JSON.parse(event.data));
-
-      const comments = JSON.parse(event.data);
+      console.log("2", roomName, JSON.parse(event.data));
+      const res = JSON.parse(event.data);
+      const comments = res.comments;
+      console.log("comments", comments);
       let result = false;
 
       if (this.state.comments.length < comments.length) {
@@ -109,6 +139,8 @@ class App extends Component {
                 session={this.state.session}
                 _logout={this._logout}
                 _changeComments={this._changeComments}
+                rooms={this.state.rooms}
+                _changeRooms={this._changeRooms}
               />
               <div id="header">
                 <div className="headerBox">
@@ -124,9 +156,9 @@ class App extends Component {
                 </div>
               </div>
               <Main
+                session={this.state.session}
                 _login={this._login}
                 comments={this.state.comments}
-                session={this.state.session}
                 _changeComments={this._changeComments}
               />
             </React.Fragment>

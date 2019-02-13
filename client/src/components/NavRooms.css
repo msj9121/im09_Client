@@ -12,7 +12,7 @@
   font-weight: 600;
 }
 
-.navRooms_inner {
+#navRooms_inner {
   height: 500px;
   margin-bottom: 15px;
   overflow-y: scroll;
@@ -48,7 +48,7 @@
   .navRooms_addRoom {
     font-size: 30px;
   }
-  .navRooms_inner {
+  #navRooms_inner {
     height: 100px;
   }
 }

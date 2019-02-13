@@ -7,25 +7,8 @@ class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rooms: []
     };
   }
-
-  async componentDidMount() {
-    const res = await fetch("http://54.180.26.159:5000/rooms");
-    const rooms = await res.json();
-    this.setState({
-      rooms: this.state.rooms.concat(rooms)
-    });
-  }
-
-  _changeRooms = async () => {
-    const res = await fetch("http://54.180.26.159:5000/rooms");
-    const rooms = await res.json();
-    this.setState({
-      rooms: rooms
-    });
-  };
 
   _onClickGoOut = () => {
     document.getElementById("Nav").style.visibility="hidden";
@@ -62,8 +45,8 @@ class Nav extends Component {
 
         <NavRooms
           session={this.props.session}
-          rooms={this.state.rooms}
-          _changeRooms={this._changeRooms}
+          rooms={this.props.rooms}
+          _changeRooms={this.props._changeRooms}
           _changeComments={this.props._changeComments}
         />
 

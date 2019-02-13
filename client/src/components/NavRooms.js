@@ -38,7 +38,7 @@ class NavRooms extends Component {
       roomCtor: this.props.session
     };
 
-    const res = await fetch("http://54.180.26.159:5000/rooms/room", {
+    const res = await fetch("http://localhost:5000/rooms/room", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -74,7 +74,7 @@ class NavRooms extends Component {
       <div className="navRoomsBox">
         <div className="navRooms">
           <div className="navRooms_title">채팅방 목록</div>
-          <div className="navRooms_inner">
+          <div id="navRooms_inner">
             {this.props.rooms.map((room, index) => {
               return (
                 <NavRoom

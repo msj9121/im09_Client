@@ -37,7 +37,7 @@ class RoomInput extends Component {
         commenter: this.props.session,
         roomName: this.props.roomname
       };
-      const res = await fetch("http://54.180.26.159:5000/comments/comment", {
+      const res = await fetch("http://localhost:5000/comments/comment", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -52,7 +52,7 @@ class RoomInput extends Component {
         this.props._changeComments(this.props.roomname);
         this.setState({
           text: ""
-        })
+        });
       } else {
         console.log("send 실패");
       }
@@ -63,6 +63,12 @@ class RoomInput extends Component {
     if (this.props.session === null) {
       alert("로그인 이후에 이용가능합니다.");
       return;
+    } else {
+      const scrollBottom =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      document.documentElement.scrollTop = scrollBottom;
     }
   };
 

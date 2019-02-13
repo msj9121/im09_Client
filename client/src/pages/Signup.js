@@ -52,7 +52,7 @@ class Signup extends Component {
         password: PW
       };
 
-      const res = await fetch("http://54.180.26.159:5000/users/signup", {
+      const res = await fetch("http://localhost:5000/users/signup", {
         method: "POST",
         headers: {
           Accept: "application/json",
