@@ -74,17 +74,20 @@ class NavRooms extends Component {
       <div className="navRoomsBox">
         <div className="navRooms">
           <div className="navRooms_title">채팅방 목록</div>
-          {this.props.rooms.map((room, index) => {
-            return (
-              <NavRoom
-                session={this.props.session}
-                room={room}
-                key={index}
-                _changeComments={this.props._changeComments}
-                _changeRooms={this.props._changeRooms}
-              />
-            );
-          })}
+          <div className="navRooms_inner">
+            {this.props.rooms.map((room, index) => {
+              return (
+                <NavRoom
+                  session={this.props.session}
+                  room={room}
+                  key={index}
+                  _changeComments={this.props._changeComments}
+                  _changeRooms={this.props._changeRooms}
+                />
+              );
+            })}
+          </div>
+
           <input
             className="navRooms_input"
             placeholder="방 제목을 입력하세요."
