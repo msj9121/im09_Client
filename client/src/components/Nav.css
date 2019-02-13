@@ -66,3 +66,36 @@
   border-radius: 8px;
 }
 
+.goOut {
+  margin: 30px;
+  display: none;
+}
+
+.goOutBtn {
+  color: white;
+  font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+  #Nav {
+    width: 250px;
+    z-index: 999;
+    right: 0;
+    visibility: hidden;
+  }
+  .navLogo {
+    font-size: 25px;
+  }
+  .navLogo_box {
+    padding-left: 35px;
+  }
+  .navLoginBox {
+    padding: 20px;
+  }
+  .navLogoutBox {
+    padding: 20px;
+  }
+  .goOut {
+    display: block;
+  }
+}

@@ -69,3 +69,8 @@
   font-size: 14px;
 }
 
+@media screen and (max-width: 600px) {
+  .loginContainer {
+    width: 350px;
+  }
+}

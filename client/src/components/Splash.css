@@ -20,3 +20,16 @@
 .splash_chatterBox {
   font-size: 30px;
 }
+
+@media screen and (max-width: 600px) {
+  #splash {
+    height: 667px;
+  }
+  .splash_title {
+    width: 250px;
+    font-size: 40px;
+  }
+  .splash_chatterBox {
+    font-size: 25px;
+  }
+}

@@ -7,8 +7,7 @@
 .roomMyMessage {
   padding: 10px;
   background-color: salmon;
-  border-radius: 10px;
+  border-radius: 5px;
   color: white;
-  font-size: 18px;
   font-weight: 500;
 }

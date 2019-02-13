@@ -31,3 +31,16 @@
   font-size: 80px;
   text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+  .indexContainer {
+    width: 300px;
+    height: 250px;
+  }
+  .indexTitle {
+    font-size: 40px;
+  }
+  .indexIcon {
+    font-size: 50px;
+  }
+}

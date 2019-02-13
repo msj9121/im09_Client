@@ -27,6 +27,10 @@ class Nav extends Component {
     });
   };
 
+  _onClickGoOut = () => {
+    document.getElementById("Nav").style.visibility="hidden";
+  }
+
   render() {
     return (
       <div id="Nav">
@@ -34,7 +38,9 @@ class Nav extends Component {
           <Link to="/" className="navLogo">
             <div>
               <div>chatterBox</div>
-              <div className="navLogo_box"><i className="fas fa-box-open fa-2x" /></div>
+              <div className="navLogo_box">
+                <i className="fas fa-box-open fa-2x" />
+              </div>
             </div>
           </Link>
         </div>
@@ -60,6 +66,12 @@ class Nav extends Component {
           _changeRooms={this._changeRooms}
           _changeComments={this.props._changeComments}
         />
+
+        <div className="goOut">
+          <div className="goOutBtn" onClick={this._onClickGoOut}>
+            <i className="fas fa-sign-out-alt" />
+          </div>
+        </div>
       </div>
     );
   }

@@ -4,3 +4,10 @@
   padding-left: 350px;
   width: 100%;
 }
+
+@media screen and (max-width: 600px) {
+  #main {
+    padding-left: 0px;
+    height: 670px;
+  }
+}
