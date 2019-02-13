@@ -38,7 +38,7 @@ class NavRooms extends Component {
       roomCtor: this.props.session
     };
 
-    const res = await fetch("http://localhost:5000/rooms/room", {
+    const res = await fetch("http://54.180.26.159:5000/rooms/room", {
       method: "POST",
       headers: {
         Accept: "application/json",

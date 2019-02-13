@@ -29,14 +29,14 @@ class App extends Component {
       });
     }
 
-    const res = await fetch("http://localhost:5000/rooms");
+    const res = await fetch("http://54.180.26.159:5000/rooms");
     const rooms = await res.json();
     this.setState({
       rooms: this.state.rooms.concat(rooms)
     });
 
     //------------웹소켓 연결---------------//
-    const webSocket = new WebSocket("ws://localhost:5000/");
+    const webSocket = new WebSocket("ws://54.180.26.159:5000/");
     webSocket.onopen = () => {
       console.log("서버와 웹소켓 연결 성공!");
     };
@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   _changeRooms = async () => {
-    const res = await fetch("http://localhost:5000/rooms");
+    const res = await fetch("http://54.180.26.159:5000/rooms");
     const rooms = await res.json();
     this.setState({
       rooms: rooms
@@ -82,7 +82,7 @@ class App extends Component {
   };
 
   _changeComments = async roomName => {
-    const res = await fetch(`http://localhost:5000/comments?room=${roomName}`);
+    const res = await fetch(`http://54.180.26.159:5000/comments?room=${roomName}`);
     const comments = await res.json();
 
     this.setState({
