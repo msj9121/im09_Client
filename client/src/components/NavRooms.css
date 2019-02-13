@@ -30,3 +30,15 @@
   font-size: 40px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+  .navRooms_title {
+    font-size: 20px;
+  }
+  .navRooms_input {
+    width: 170px;
+  }
+  .navRooms_addRoom {
+    font-size: 30px;
+  }
+}

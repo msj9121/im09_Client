@@ -43,3 +43,9 @@
   font-size: 19px;
   font-weight: 500;
 }
+
+@media screen and (max-width: 600px) {
+  .signupContainer {
+    width: 350px;
+  }
+}

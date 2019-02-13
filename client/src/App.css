@@ -1,10 +1,45 @@
 body {
   margin: 0;
-  background-color: #F2F3F7;
+  background-color: #f2f3f7;
 }
 
 #App {
   display: flex;
   max-width: 1140px;
   margin: 0 auto;
+}
+
+#header {
+  position: fixed;
+  width: 100%;
+  background-color: #FF7E6A;
+  color: white;
+  display: none;
+}
+
+.headerBox {
+  margin: 10px 15px 10px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerLogoBox {
+  font-size: 25px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.headerLogo {
+  text-decoration: none;
+  color: white;
+}
+
+.headerBtn {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  #header {
+    display: block;
+  }
 }

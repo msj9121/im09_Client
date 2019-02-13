@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav";
 import Main from "./components/Main";
@@ -54,7 +54,7 @@ class App extends Component {
   _changeComments = async roomName => {
     const res = await fetch(`http://54.180.26.159:5000/comments?room=${roomName}`);
     const comments = await res.json();
-    console.log(comments)
+    console.log(comments);
     this.setState({
       comments: comments
     });
@@ -69,7 +69,7 @@ class App extends Component {
       const comments = JSON.parse(event.data);
       let result = false;
 
-      if(this.state.comments.length < comments.length) {
+      if (this.state.comments.length < comments.length) {
         result = true;
       }
 
@@ -78,7 +78,7 @@ class App extends Component {
           comments: comments
         });
 
-        if(result) {
+        if (result) {
           this._scrollBottom();
           result = false;
         }
@@ -91,6 +91,10 @@ class App extends Component {
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
     document.documentElement.scrollTop = scrollBottom;
+  };
+
+  _onClickShowNav = () => {
+    document.getElementById("Nav").style.visibility = "visible";
   };
 
   render() {
@@ -106,6 +110,19 @@ class App extends Component {
                 _logout={this._logout}
                 _changeComments={this._changeComments}
               />
+              <div id="header">
+                <div className="headerBox">
+                  <div className="headerLogoBox">
+                    <Link to="/" className="headerLogo">
+                      <i className="fas fa-box-open" />
+                    </Link>
+                  </div>
+
+                  <div className="headerBtn" onClick={this._onClickShowNav}>
+                    <i className="fas fa-align-justify" />
+                  </div>
+                </div>
+              </div>
               <Main
                 _login={this._login}
                 comments={this.state.comments}
