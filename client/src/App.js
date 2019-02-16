@@ -96,7 +96,13 @@ class App extends Component {
       console.log("2", roomName, JSON.parse(event.data));
       const res = JSON.parse(event.data);
       const comments = res.comments;
+      const rooms = res.rooms;
       console.log("comments", comments);
+
+      this.setState({
+        rooms: rooms
+      })
+      
       let result = false;
 
       if (this.state.comments.length < comments.length) {
