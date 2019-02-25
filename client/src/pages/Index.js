@@ -7,7 +7,7 @@ class Index extends Component {
       <div id="index">
         <div className="indexContainer">
           <div className="indexBox">
-            <div className="indexTitle">chetterBox</div>
+            <div className="indexTitle">chatterBox</div>
             <div className="indexIcon"><i className="fas fa-box-open fa-2x" /></div>
           </div>
         </div>
