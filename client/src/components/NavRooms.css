@@ -1,0 +1,54 @@
+.navRoomsBox {
+}
+
+.navRooms {
+  margin: 30px;
+}
+
+.navRooms_title {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 600;
+}
+
+#navRooms_inner {
+  height: 500px;
+  margin-bottom: 15px;
+  overflow-y: scroll;
+}
+
+.navRooms_input {
+  width: 270px;
+  padding: 10px;
+  border: none;
+}
+
+.navRooms_addRoomBox {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.navRooms_addRoom {
+  width: 70px;
+  text-align: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .navRooms_title {
+    font-size: 20px;
+  }
+  .navRooms_input {
+    width: 180px;
+    padding: 5px;
+  }
+  .navRooms_addRoom {
+    font-size: 30px;
+  }
+  #navRooms_inner {
+    height: 100px;
+  }
+}

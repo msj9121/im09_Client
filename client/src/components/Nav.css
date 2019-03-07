@@ -1,0 +1,101 @@
+#Nav {
+  background-color: #FF7E6A;
+  width: 350px;
+  height: 1000px;
+  position: fixed;
+}
+
+.navLogoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.navLogo {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.navLogo_box {
+  padding-left: 40px;
+}
+
+.navLoginBox {
+  padding: 30px;
+}
+
+.navLogin {
+  display: block;
+  border: solid 1px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.navLogoutBox {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.navUser {
+  margin-right: 10px;
+  font-size: 20px;
+  color: white;
+  font-weight: 700;
+}
+
+.navLogout {
+  display: block;
+  border: solid 1px;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  padding: 3px 10px 3px 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.goOut {
+  margin: 30px;
+  display: none;
+}
+
+.goOutBtn {
+  color: white;
+  font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+  #Nav {
+    width: 250px;
+    z-index: 999;
+    right: 0;
+    visibility: hidden;
+  }
+  .navLogo {
+    font-size: 25px;
+  }
+  .navLogo_box {
+    padding-left: 30px;
+  }
+  .navLoginBox {
+    padding: 20px;
+  }
+  .navLogoutBox {
+    padding: 20px;
+  }
+  .goOut {
+    display: block;
+  }
+}

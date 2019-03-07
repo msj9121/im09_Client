@@ -1,0 +1,26 @@
+.roomInputBox {
+  background-color:navajowhite;
+  position: fixed;
+  height: 70px;
+  bottom: 0;
+  display: flex;
+  width: inherit;
+  max-width: inherit;
+}
+
+.roomInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  border: 0px solid;
+}
+
+.roomInputSend {
+  padding: 20px 20px 0px 20px;
+  background-color: #FF7E6A;
+  cursor: pointer;
+}
+
+.fa-paper-plane {
+  font-size: 30px;
+}

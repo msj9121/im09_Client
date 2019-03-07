@@ -1,0 +1,13 @@
+#main {
+  background-color:#f6ae8b;
+  height: 980px;
+  padding-left: 350px;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  #main {
+    padding-left: 0px;
+    height: 600px;
+  }
+}
